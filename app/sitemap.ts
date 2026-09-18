@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {services} from '../content/palvelut';export default function sitemap():MetadataRoute.Sitemap{const base='https://bilto.fi';return ['/','/palvelut','/referenssit','/tyon-jalki','/meista','/yhteystiedot',...services.map(s=>`/palvelut/${s.slug}`)].map(path=>({url:base+path,lastModified:new Date()}))}
